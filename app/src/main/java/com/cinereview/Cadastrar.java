@@ -7,29 +7,26 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class Cadastrar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.tela_cadastro);
+
+        //remove o titulo
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setBackgroundDrawable(null);
-
 
         // Remover a barra de status
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
-
-        TextView cadastrarTextView = findViewById(R.id.cadastrarTextView);
-        cadastrarTextView.setOnClickListener(new View.OnClickListener() {// Remover a barra de status
-
-
+        TextView entrarTextView = findViewById(R.id.entrarTextView);
+        entrarTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Iniciar a nova atividade (CadastrarActivity)
-                Intent intent = new Intent(MainActivity.this, Cadastrar.class);
+                // Iniciar a nova atividade (MainActivity)
+                Intent intent = new Intent(Cadastrar.this, MainActivity.class);
                 startActivity(intent);
             }
         });

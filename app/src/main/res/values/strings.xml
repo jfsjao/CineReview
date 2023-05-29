@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">CineReview</string>
+
+    <!-- Strings da tela de login -->
+    <string name="login_title">Login</string>
+    <string name="login_username_hint">Usuário</string>
+    <string name="login_password_hint">Senha</string>
+    <string name="login_button_text">Entrar</string>
+    <string name="login_forgot_password">Esqueceu a senha?</string>
+    <string name="login_create_account">Não possui uma conta? Cadastre-se!</string>
+
+    <!-- Strings da tela de cadastro -->
+    <string name="cadastro_title">Cadastro</string>
+    <string name="cadastro_username_hint">Usuário</string>
+    <string name="cadastro_password_hint">Senha</string>
+    <string name="cadastro_confirm_password_hint">Confirmar Senha</string>
+    <string name="cadastro_button_text">Cadastrar</string>
+    <string name="cadastro_have_account">Já possui uma conta? Entre!</string>
 </resources>
