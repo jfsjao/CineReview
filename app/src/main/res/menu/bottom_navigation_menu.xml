@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item1"
+        android:title="@string/buscar"
+        android:icon="@drawable/search" />
+    <item
+        android:id="@+id/menu_item2"
+        android:title="@string/recomendacoes"
+        android:icon="@drawable/my_recommendation" />
+    <item
+        android:id="@+id/menu_item3"
+        android:title="@string/home"
+        android:icon="@drawable/icon_home" />
+    <item
+        android:id="@+id/menu_item4"
+        android:title="@string/minhas_celebridades"
+        android:icon="@drawable/my_celebrity" />
+    <item
+        android:id="@+id/menu_item5"
+        android:title="@string/minha_lista"
+        android:icon="@drawable/my_list" />
+</menu>

@@ -24,6 +24,9 @@
         <activity
             android:name=".Cadastrar"
             android:exported="true" />
+        <activity
+            android:name=".Home"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -16,4 +16,11 @@
     <string name="cadastro_confirm_password_hint">Confirmar Senha</string>
     <string name="cadastro_button_text">Cadastrar</string>
     <string name="cadastro_have_account">Já possui uma conta? Entre!</string>
+
+    <!-- Strings do botton menu -->
+    <string name="buscar">Search</string>
+    <string name="recomendacoes">Recommendations</string>
+    <string name="home">Home</string>
+    <string name="minhas_celebridades">My celebs</string>
+    <string name="minha_lista">My List</string>
 </resources>

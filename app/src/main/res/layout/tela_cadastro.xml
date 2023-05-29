@@ -65,6 +65,7 @@
             android:onClick="Cadastrar"
             android:padding="12dp"
             android:text="@string/cadastro_button_text"
+            android:background="@color/red"
             android:textColor="@color/white"
             android:textSize="18sp" />
 

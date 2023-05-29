@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,22 +17,21 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setBackgroundDrawable(null);
 
-
         // Remover a barra de status
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
+        Button botaoLogin = findViewById(R.id.botao_login);
+        botaoLogin.setOnClickListener(v -> {
+            // Iniciar a nova atividade (HomeActivity)
+            Intent intent = new Intent(MainActivity.this, Home.class);
+            startActivity(intent);
+        });
 
         TextView cadastrarTextView = findViewById(R.id.cadastrarTextView);
-        cadastrarTextView.setOnClickListener(new View.OnClickListener() {// Remover a barra de status
-
-
-            @Override
-            public void onClick(View v) {
-                // Iniciar a nova atividade (CadastrarActivity)
-                Intent intent = new Intent(MainActivity.this, Cadastrar.class);
-                startActivity(intent);
-            }
+        cadastrarTextView.setOnClickListener(v -> {
+            // Iniciar a nova atividade (CadastrarActivity)
+            Intent intent = new Intent(MainActivity.this, Cadastrar.class);
+            startActivity(intent);
         });
     }
 }
