@@ -23,4 +23,17 @@
     <string name="home">Home</string>
     <string name="minhas_celebridades">My celebs</string>
     <string name="minha_lista">My List</string>
+
+    <!-- Strings ListView - myList  -->
+    <string name="imagem_filme_description">Descrição da imagem do filme</string>
+    <string name="titulo_do_filme">Título do Filme</string>
+    <string name="genero">Gênero</string>
+    <string name="nota">Nota: 0.0</string>
+
+    <!-- Strings da tela Home -->
+    <string name="titleTextView">Home</string>
+    <string name="TextViewmyList">Minha Lista</string>
+    <string name="TextViewrecomendation">Recomendações</string>
+    <string name="TextViewcelebs">Minhas Celebridades</string>
+
 </resources>

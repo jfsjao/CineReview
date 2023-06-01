@@ -1,20 +1,21 @@
 package com.cinereview;
 
 import android.graphics.Bitmap;
+
 import java.util.Date;
 
 public class Filme {
-    String nome;
-    String[] genero;
-    Ator[] atores;
-    Diretor diretor;
-    float nota;
-    String descricao;
-    Bitmap cartaz;
-    Date dataLancamento;
+    private String nome;
+    private String[] genero;
+    private Ator[] atores;
+    private Diretor diretor;
+    private float nota;
+    private String descricao;
+    private Bitmap cartaz;
+    private Date dataLancamento;
 
-    public Filme(Builder builder) {
-        this.setNome(builder.nome);
+    private Filme(Builder builder) {
+        this.nome = builder.nome;
         this.genero = builder.genero;
         this.atores = builder.atores;
         this.diretor = builder.diretor;
@@ -24,8 +25,36 @@ public class Filme {
         this.dataLancamento = builder.dataLancamento;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getNome() {
+        return nome;
+    }
+
+    public String[] getGenero() {
+        return genero;
+    }
+
+    public Ator[] getAtores() {
+        return atores;
+    }
+
+    public Diretor getDiretor() {
+        return diretor;
+    }
+
+    public float getNota() {
+        return nota;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Bitmap getCartaz() {
+        return cartaz;
+    }
+
+    public Date getDataLancamento() {
+        return dataLancamento;
     }
 
     public static class Builder {
@@ -81,39 +110,4 @@ public class Filme {
             return new Filme(this);
         }
     }
-
-    // Getters para os atributos
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String[] getGenero() {
-        return genero;
-    }
-
-    public Ator[] getAtores() {
-        return atores;
-    }
-
-    public Diretor getDiretor() {
-        return diretor;
-    }
-
-    public float getNota() {
-        return nota;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public Bitmap getCartaz() {
-        return cartaz;
-    }
-
-    public Date getDataLancamento() {
-        return dataLancamento;
-    }
 }
-

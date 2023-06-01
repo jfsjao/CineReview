@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.WindowManager;
 
@@ -13,12 +15,15 @@ import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
+    private FilmeAdapter filmeAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_principal);
 
-        //remove o titulo
+        // Remove o título
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setBackgroundDrawable(null);
 
@@ -30,10 +35,14 @@ public class Home extends AppCompatActivity {
             // Lógica para tratar a seleção de itens da BottomNavigationView
             return true;
         });
+
+        recyclerView = findViewById(R.id.recyclerView_ListView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         ListarFilmes();
     }
 
-    public void ListarFilmes(){
+    public void ListarFilmes() {
         ArrayList<Filme> listaFilmes = new ArrayList<>();
 
         Ator[] atores = {
@@ -45,21 +54,18 @@ public class Home extends AppCompatActivity {
         Diretor diretor = new Diretor("Diretor 1", 23, "Brasileiro", null);
 
         Filme filme1 = new Filme.Builder("Filme 1")
-                .setGenero(new String[] {"Ação", "Drama"})
+                .setGenero(new String[]{"Ação", "Drama"})
                 .setAtores(atores)
                 .setDiretor(diretor)
                 .setNota(8.5f)
                 .setDescricao("Descrição do Filme 1")
                 .build();
-        System.out.println(filme1);
-        listaFilmes.add(filme1);
-        listaFilmes.add(filme1);
-        listaFilmes.add(filme1);
-        System.out.println(filme1);
 
-        RecyclerView recyclerViewFilmes = findViewById(R.id.recyclerViewFilmes);
-        FilmeAdapter filmeAdapter = new FilmeAdapter(Home.this,listaFilmes);
-        recyclerViewFilmes.setAdapter(filmeAdapter);
-        recyclerViewFilmes.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        listaFilmes.add(filme1);
+        listaFilmes.add(filme1);
+        listaFilmes.add(filme1);
+
+        filmeAdapter = new FilmeAdapter(this, listaFilmes);
+        recyclerView.setAdapter(filmeAdapter);
     }
 }
