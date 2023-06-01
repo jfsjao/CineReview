@@ -1,22 +1,20 @@
 package com.cinereview;
 
+import android.os.Bundle;
+import android.view.WindowManager;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.view.WindowManager;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Home extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private FilmeAdapter filmeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +22,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.tela_principal);
 
         // Remove o título
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         getSupportActionBar().setBackgroundDrawable(null);
 
         // Remover a barra de status
@@ -36,7 +34,7 @@ public class Home extends AppCompatActivity {
             return true;
         });
 
-        recyclerView = findViewById(R.id.recyclerView_ListView);
+        recyclerView = findViewById(R.id.recyclerView_myList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ListarFilmes();
@@ -65,7 +63,7 @@ public class Home extends AppCompatActivity {
         listaFilmes.add(filme1);
         listaFilmes.add(filme1);
 
-        filmeAdapter = new FilmeAdapter(this, listaFilmes);
+        FilmeAdapter filmeAdapter = new FilmeAdapter(this, listaFilmes);
         recyclerView.setAdapter(filmeAdapter);
     }
 }
