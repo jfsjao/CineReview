@@ -3,7 +3,6 @@ package com.cinereview;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button botaoLogin = findViewById(R.id.botao_login);
         botaoLogin.setOnClickListener(v -> {
             // Iniciar a nova atividade (HomeActivity)
-            Intent intent = new Intent(MainActivity.this, Home.class);
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
         });
 

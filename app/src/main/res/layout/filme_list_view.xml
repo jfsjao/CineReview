@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <ImageView
@@ -10,29 +10,37 @@
         android:layout_width="120dp"
         android:layout_height="180dp"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/descricao" />
+        />
 
     <TextView
         android:id="@+id/text_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/titulo_filme"
+        android:text="Título do Filme"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/text_genero"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="@string/genero"
+        android:text="Gênero"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/text_nota"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="@string/nota"
+        android:text="Nota: 0.0"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Descrição do Filme"
         android:textSize="16sp" />
 
 </LinearLayout>

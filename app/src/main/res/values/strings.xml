@@ -25,10 +25,10 @@
     <string name="minha_lista">My List</string>
 
     <!-- Strings ListView - myList  -->
-    <string name="imagem_filme_description">Descrição da imagem do filme</string>
-    <string name="titulo_do_filme">Título do Filme</string>
+    <string name="descricao">Descrição</string>
+    <string name="titulo_filme">Título do Filme</string>
     <string name="genero">Gênero</string>
-    <string name="nota">Nota: 0.0</string>
+    <string name="nota">Nota</string>
 
     <!-- Strings da tela Home -->
     <string name="titleTextView">Home</string>

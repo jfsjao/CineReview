@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CineReview"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ListaFilmesActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -25,7 +27,7 @@
             android:name=".Cadastrar"
             android:exported="true" />
         <activity
-            android:name=".Home"
+            android:name=".HomeActivity"
             android:exported="true" />
     </application>
 
