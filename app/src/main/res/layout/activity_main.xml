@@ -14,7 +14,7 @@ tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="302dp"
-        android:layout_height="396dp"
+        android:layout_height="300dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/logo"
         android:scaleType="centerCrop" />
@@ -63,6 +63,13 @@ tools:context=".MainActivity">
         android:textColor="#999999"
         android:textSize="14sp"
         android:gravity="center" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_google_login"
+        android:layout_height="wrap_content"
+        android:layout_width="265dp"
+        android:background="#F2F2F2"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/cadastrarTextView"

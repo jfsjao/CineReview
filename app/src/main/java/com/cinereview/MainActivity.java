@@ -7,6 +7,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseApp;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -32,5 +34,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, Cadastrar.class);
             startActivity(intent);
         });
+
+        //FirebaseApp.initializeApp(this);
+
     }
 }
