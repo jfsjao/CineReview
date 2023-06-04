@@ -7,47 +7,68 @@
     tools:context=".BuscaActivity"
     android:background="@color/black">
 
-        <ScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/black">
 
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/titleTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/black">
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="0dp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Busca"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/titleTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="0dp"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:text="Busca"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </ScrollView>
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView_busca"
+                android:layout_width="265dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#F2F2F2"
+                android:hint="Buscar"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#546E7A"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:imeOptions="actionSearch" />
 
+            <Button
+                android:id="@+id/btn_busca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Buscar" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            style="@style/BottomNavigationView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:menu="@menu/bottom_navigation_menu"
-            app:itemIconTint="@color/white"
-            app:itemBackground="@color/grey"
-            tools:ignore="VisualLintBottomNav" />
+        </LinearLayout>
+    </ScrollView>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/BottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="@color/white"
+        app:itemBackground="@color/grey"
+        tools:ignore="VisualLintBottomNav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

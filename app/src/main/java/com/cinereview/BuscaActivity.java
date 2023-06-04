@@ -4,19 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
 import android.view.WindowManager;
-
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.List;
 import java.util.Objects;
 
 public class BuscaActivity extends AppCompatActivity {
+
+    private AutoCompleteTextView autoCompleteTextView_busca;
+    private DBHelper dbHelper;
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busca);
+
         // Remove o título
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         getSupportActionBar().setBackgroundDrawable(null);
@@ -30,7 +40,7 @@ public class BuscaActivity extends AppCompatActivity {
             switch (itemId) {
                 case R.id.menu_item1:
                     // Navegar para a tela de busca (esta tela)
-                    // Não é necessário fazer nada, já estamos na tela de home
+                    // Não é necessário fazer nada, já estamos na tela de busca
                     return true;
                 case R.id.menu_item2:
                     // Navegar para a tela de recomendações
@@ -56,5 +66,35 @@ public class BuscaActivity extends AppCompatActivity {
                     return false;
             }
         });
+
+        dbHelper = new DBHelper(this);
+
+        autoCompleteTextView_busca = findViewById(R.id.autoCompleteTextView_busca);
+
+        List<String> searchHistory = dbHelper.getAllSearchQueries();
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, searchHistory);
+        autoCompleteTextView_busca.setAdapter(adapter);
+
+        Button btn_busca = findViewById(R.id.btn_busca);
+        btn_busca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enviarBusca();
+            }
+        });
+    }
+
+    private void enviarBusca() {
+        String searchQuery = autoCompleteTextView_busca.getText().toString().trim();
+        if (!searchQuery.isEmpty()) {
+            dbHelper.insertSearchQuery(searchQuery);
+        }
+
+        List<String> searchHistory = dbHelper.getAllSearchQueries();
+        adapter.clear();
+        adapter.addAll(searchHistory);
+        adapter.notifyDataSetChanged();
+
+        // Lógica para lidar com a ação de enviar a busca aqui
     }
 }
