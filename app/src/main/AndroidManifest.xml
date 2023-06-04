@@ -12,6 +12,15 @@
         android:theme="@style/Theme.CineReview"
         tools:targetApi="31">
         <activity
+            android:name=".MinhasCelebridadesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuscaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecomendacoesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListaFilmesActivity"
             android:exported="false" />
         <activity

@@ -26,7 +26,7 @@ public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.FilmeViewHol
 
     @Override
     public FilmeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.mylist, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_list, parent, false);
         return new FilmeViewHolder(itemView);
     }
 

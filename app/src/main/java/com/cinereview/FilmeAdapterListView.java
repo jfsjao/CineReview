@@ -24,7 +24,7 @@ public class FilmeAdapterListView extends ArrayAdapter<Filme> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View listItem = convertView;
         if (listItem == null)
-            listItem = LayoutInflater.from(mContext).inflate(R.layout.filme_list_view, parent, false);
+            listItem = LayoutInflater.from(mContext).inflate(R.layout.my_list, parent, false);
 
         Filme currentFilme = filmesList.get(position);
 
@@ -38,8 +38,6 @@ public class FilmeAdapterListView extends ArrayAdapter<Filme> {
         TextView nota = listItem.findViewById(R.id.text_nota);
         nota.setText("Nota: " + currentFilme.getNota());
 
-        TextView descricao = listItem.findViewById(R.id.text_descricao);
-        descricao.setText(currentFilme.getDescricao());
 
         return listItem;
     }

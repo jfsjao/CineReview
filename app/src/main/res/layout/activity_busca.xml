@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaFilmesActivity"
+    tools:context=".BuscaActivity"
     android:background="@color/black">
 
         <ScrollView
@@ -26,17 +26,13 @@
                     android:layout_marginBottom="0dp"
                     android:gravity="center"
                     android:padding="16dp"
-                    android:text="Minha Lista"
+                    android:text="Busca"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold" />
-
-                <ListView
-                    android:id="@+id/listView01"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
             </LinearLayout>
         </ScrollView>
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
@@ -52,5 +48,6 @@
             app:itemIconTint="@color/white"
             app:itemBackground="@color/grey"
             tools:ignore="VisualLintBottomNav" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
