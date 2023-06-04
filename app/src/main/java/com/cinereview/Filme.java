@@ -1,9 +1,5 @@
 package com.cinereview;
 
-import android.graphics.Bitmap;
-
-import java.util.Date;
-
 public class Filme {
     private String nome;
     private String[] genero;
@@ -11,8 +7,8 @@ public class Filme {
     private Diretor diretor;
     private float nota;
     private String descricao;
-    private Bitmap cartaz;
-    private Date dataLancamento;
+    private String cartaz;
+    private String dataLancamento;
 
     private Filme(Builder builder) {
         this.nome = builder.nome;
@@ -49,11 +45,11 @@ public class Filme {
         return descricao;
     }
 
-    public Bitmap getCartaz() {
+    public String getCartaz() {
         return cartaz;
     }
 
-    public Date getDataLancamento() {
+    public String getDataLancamento() {
         return dataLancamento;
     }
 
@@ -64,8 +60,8 @@ public class Filme {
         private Diretor diretor;
         private float nota;
         private String descricao;
-        private Bitmap cartaz;
-        private Date dataLancamento;
+        private String cartaz;
+        private String dataLancamento;
 
         public Builder(String nome) {
             this.nome = nome;
@@ -96,12 +92,12 @@ public class Filme {
             return this;
         }
 
-        public Builder setCartaz(Bitmap cartaz) {
+        public Builder setCartaz(String cartaz) {
             this.cartaz = cartaz;
             return this;
         }
 
-        public Builder setDataLancamento(Date dataLancamento) {
+        public Builder setDataLancamento(String dataLancamento) {
             this.dataLancamento = dataLancamento;
             return this;
         }

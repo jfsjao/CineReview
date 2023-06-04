@@ -34,7 +34,7 @@ public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.FilmeViewHol
     public void onBindViewHolder(FilmeViewHolder holder, int position) {
         Filme currentFilme = filmesList.get(position);
 
-        holder.cartaz.setImageBitmap(currentFilme.getCartaz());
+        //holder.cartaz.setImageBitmap(currentFilme.getCartaz());
         holder.titulo.setText(currentFilme.getNome());
         holder.genero.setText(String.join(", ", currentFilme.getGenero()));
         holder.nota.setText("Nota: " + currentFilme.getNota());

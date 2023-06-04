@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "216864739081",
+    "project_id": "cine-review",
+    "storage_bucket": "cine-review.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216864739081:android:37e9ac82c84e48dd5d8dd8",
+        "android_client_info": {
+          "package_name": "com.cinereview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216864739081-ij33g8j6ksge2etne8m4tttor7dmb2p7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC01QBIGnF6enVY4jHCy3ses5xPhbth4xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216864739081-ij33g8j6ksge2etne8m4tttor7dmb2p7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

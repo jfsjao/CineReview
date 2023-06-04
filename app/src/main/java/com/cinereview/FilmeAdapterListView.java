@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import com.squareup.picasso.Picasso;
 public class FilmeAdapterListView extends ArrayAdapter<Filme> {
     private Context mContext;
     private List<Filme> filmesList;
@@ -29,10 +29,8 @@ public class FilmeAdapterListView extends ArrayAdapter<Filme> {
         Filme currentFilme = filmesList.get(position);
 
         ImageView cartaz = listItem.findViewById(R.id.image_filme);
-        cartaz.setImageBitmap(currentFilme.getCartaz());
+        Picasso.get().load(currentFilme.getCartaz()).into(cartaz);
 
-        TextView titulo = listItem.findViewById(R.id.text_titulo);
-        titulo.setText(currentFilme.getNome());
 
         // TextView genero = listItem.findViewById(R.id.text_genero);
         // genero.setText(currentFilme.getGenero());
