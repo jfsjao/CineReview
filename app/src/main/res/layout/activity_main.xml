@@ -28,6 +28,7 @@ tools:context=".MainActivity">
         android:hint="@string/login_username_hint"
         android:inputType="text"
         android:padding="12dp"
+        android:textColor="#000000"
         android:textColorHint="#999999"
         android:textSize="16sp" />
 
@@ -40,6 +41,7 @@ tools:context=".MainActivity">
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:padding="12dp"
+        android:textColor="#000000"
         android:textColorHint="#999999"
         android:textSize="16sp" />
 
@@ -54,22 +56,6 @@ tools:context=".MainActivity">
         android:background="@color/red"
         android:textColor="@color/white"
         android:textSize="18sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/login_forgot_password"
-        android:textColor="#999999"
-        android:textSize="14sp"
-        android:gravity="center" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/btn_google_login"
-        android:layout_height="wrap_content"
-        android:layout_width="265dp"
-        android:background="#F2F2F2"
-        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/cadastrarTextView"

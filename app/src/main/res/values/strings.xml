@@ -35,5 +35,7 @@
     <string name="TextViewmyList">Minha Lista</string>
     <string name="TextViewrecomendation">Recomendações</string>
     <string name="TextViewcelebs">Minhas Celebridades</string>
+    <string name="logout">Logout</string>
+
 
 </resources>

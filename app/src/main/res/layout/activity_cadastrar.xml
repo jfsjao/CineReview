@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cadastrar">
+    tools:context=".cadastrar">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,8 +29,10 @@
             android:background="#F2F2F2"
             android:hint="@string/cadastro_username_hint"
             android:inputType="text"
-            android:padding="12dp"
+            android:minHeight="48dp"
             android:textColorHint="#999999"
+            android:padding="12dp"
+            android:textColor="#000000"
             android:textSize="16sp" />
 
         <EditText
@@ -41,8 +43,10 @@
             android:background="#F2F2F2"
             android:hint="@string/cadastro_password_hint"
             android:inputType="textPassword"
+            android:minHeight="48dp"
             android:padding="12dp"
             android:textColorHint="#999999"
+            android:textColor="#000000"
             android:textSize="16sp" />
 
         <EditText
@@ -53,8 +57,10 @@
             android:background="#F2F2F2"
             android:hint="@string/cadastro_confirm_password_hint"
             android:inputType="textPassword"
+            android:minHeight="48dp"
             android:padding="12dp"
             android:textColorHint="#999999"
+            android:textColor="#000000"
             android:textSize="16sp" />
 
         <Button
@@ -74,11 +80,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:onClick="entrar"
             android:text="@string/cadastro_have_account"
             android:textColor="#FF4081"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:onClick="entrar" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
