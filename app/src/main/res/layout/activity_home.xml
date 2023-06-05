@@ -1,161 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".HomeActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation">
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/btnLogout">
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="412dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="All Filmes"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/titleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="0dp"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="@string/titleTextView"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btnLogout"
+            <LinearLayout
+                android:id="@+id/layoutFilmes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/logout"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/grey">
-
-                <TextView
-                    android:id="@+id/TextViewMyList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:padding="5dp"
-                    android:text="@string/TextViewmyList"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
-
-                <ListView
-                    android:id="@+id/listView_myList"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@color/grey"
-                    app:layout_constraintBottom_toTopOf="@+id/TextViewrecomendation"
-                    app:layout_constraintTop_toBottomOf="@id/titleTextView" />
-
-                </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/grey">
-
-                <TextView
-                    android:id="@+id/TextViewrecomendation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:padding="5dp"
-                    android:text="@string/TextViewrecomendation"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints" />
-
-
-                <ListView
-                    android:id="@+id/listView_Recomendation"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@color/grey"
-                    app:layout_constraintBottom_toTopOf="@+id/TextViewrecomendation"
-                    app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+                android:orientation="horizontal">
 
             </LinearLayout>
 
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/titleTextView2"
+            android:layout_width="412dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="Minha Lista"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/grey">
-
-                <TextView
-                    android:id="@+id/TextView_Celebs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:padding="5dp"
-                    android:text="@string/TextViewcelebs"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
-
-                <ListView
-                    android:id="@+id/listViewcelebs"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@color/grey"
-                    app:layout_constraintBottom_toTopOf="@+id/TextViewrecomendation"
-                    app:layout_constraintTop_toBottomOf="@id/titleTextView" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
+                android:id="@+id/layoutCelebridades"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:orientation="horizontal">
 
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/titleTextView3"
+            android:layout_width="412dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="Recomendados"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layoutRecomendados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -165,12 +119,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/bottom_navigation_menu"
-        app:itemIconTint="@color/white"
         app:itemBackground="@color/grey"
+        app:itemIconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu"
         tools:ignore="VisualLintBottomNav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

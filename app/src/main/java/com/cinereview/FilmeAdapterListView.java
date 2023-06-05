@@ -1,11 +1,13 @@
 package com.cinereview;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,9 +33,12 @@ public class FilmeAdapterListView extends ArrayAdapter<Filme> {
         ImageView cartaz = listItem.findViewById(R.id.image_filme);
         Picasso.get().load(currentFilme.getCartaz()).into(cartaz);
 
+        TextView titulo = listItem.findViewById(R.id.text_titulo);
+        titulo.setText(currentFilme.getNome());
 
-        // TextView genero = listItem.findViewById(R.id.text_genero);
-        // genero.setText(currentFilme.getGenero());
+
+//        TextView genero = listItem.findViewById(R.id.text_genero);
+//        genero.setText(currentFilme.getGenero());
 
         TextView nota = listItem.findViewById(R.id.text_nota);
         nota.setText("Nota: " + currentFilme.getNota());

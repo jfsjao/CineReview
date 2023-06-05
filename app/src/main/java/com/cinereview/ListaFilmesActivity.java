@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import android.content.Intent;
@@ -124,6 +126,8 @@ public class ListaFilmesActivity extends AppCompatActivity {
                 FilmeAdapterListView filmeAdapter =
                         new FilmeAdapterListView(ListaFilmesActivity.this, todosFilmes);
                 listView1.setAdapter(filmeAdapter);
+
+
             }
 
             @Override
