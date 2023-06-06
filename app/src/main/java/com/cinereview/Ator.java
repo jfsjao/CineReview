@@ -6,9 +6,9 @@ public class Ator {
     private String nome;
     private int idade;
     private String nacionalidade;
-    private Bitmap foto;
+    private String foto;
 
-    public Ator(String nome, int idade, String nacionalidade, Bitmap foto) {
+    public Ator(String nome, int idade, String nacionalidade, String foto) {
         this.nome = nome;
         this.idade = idade;
         this.nacionalidade = nacionalidade;
@@ -41,11 +41,11 @@ public class Ator {
         this.nacionalidade = nacionalidade;
     }
 
-    public Bitmap getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(Bitmap foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 }

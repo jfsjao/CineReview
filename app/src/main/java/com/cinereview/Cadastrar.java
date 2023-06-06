@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Cadastrar extends AppCompatActivity {
 
@@ -77,6 +79,10 @@ public class Cadastrar extends AppCompatActivity {
                                     // Redirecionar para a tela de login
                                     startActivity(new Intent(Cadastrar.this, MainActivity.class));
                                     finish(); // Encerrar a atividade de cadastro
+
+                                    String userId = mAuth.getCurrentUser().getUid();
+                                    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+                                    userRef.child("favoritos").setValue("");
                                 } else {
                                     Toast.makeText(Cadastrar.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }

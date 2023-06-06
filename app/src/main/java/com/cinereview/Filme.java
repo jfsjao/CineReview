@@ -1,6 +1,7 @@
 package com.cinereview;
 
 public class Filme {
+    private String id;
     private String nome;
     private String[] genero;
     private Ator[] atores;
@@ -9,8 +10,10 @@ public class Filme {
     private String descricao;
     private String cartaz;
     private String dataLancamento;
+    private int totalDeFavoritos;
 
     private Filme(Builder builder) {
+        this.id = builder.id;
         this.nome = builder.nome;
         this.genero = builder.genero;
         this.atores = builder.atores;
@@ -19,6 +22,11 @@ public class Filme {
         this.descricao = builder.descricao;
         this.cartaz = builder.cartaz;
         this.dataLancamento = builder.dataLancamento;
+        this.totalDeFavoritos = builder.totalDeFavoritos;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getNome() {
@@ -53,7 +61,12 @@ public class Filme {
         return dataLancamento;
     }
 
+    public int getTotalDeFavoritos() {
+        return totalDeFavoritos;
+    }
+
     public static class Builder {
+        private String id;
         private String nome;
         private String[] genero;
         private Ator[] atores;
@@ -62,9 +75,15 @@ public class Filme {
         private String descricao;
         private String cartaz;
         private String dataLancamento;
+        private int totalDeFavoritos;
 
         public Builder(String nome) {
             this.nome = nome;
+        }
+
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
         }
 
         public Builder setGenero(String[] genero) {
@@ -99,6 +118,11 @@ public class Filme {
 
         public Builder setDataLancamento(String dataLancamento) {
             this.dataLancamento = dataLancamento;
+            return this;
+        }
+
+        public Builder setTotalDeFavoritos(int totalDeFavoritos) {
+            this.totalDeFavoritos = totalDeFavoritos;
             return this;
         }
 
