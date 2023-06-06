@@ -32,8 +32,8 @@ public class DiretorAdapter extends ArrayAdapter<Diretor> {
 
         Diretor currentDiretor = diretorList.get(position);
 
-//        ImageView foto = listItem.findViewById(R.id.image_foto);
-//        Picasso.get().load(currentDiretor.getFotoUrl()).into(foto);
+        ImageView foto = listItem.findViewById(R.id.image_foto);
+        Picasso.get().load(currentDiretor.getFoto()).into(foto);
 
         TextView nome = listItem.findViewById(R.id.text_nome);
         nome.setText(currentDiretor.getNome());

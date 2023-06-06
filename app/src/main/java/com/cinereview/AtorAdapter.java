@@ -32,8 +32,8 @@ public class AtorAdapter extends ArrayAdapter<Ator> {
 
         Ator currentAtor = atorList.get(position);
 
-//        ImageView foto = listItem.findViewById(R.id.image_foto);
-//        Picasso.get().load(currentAtor.getFotoUrl()).into(foto);
+        ImageView foto = listItem.findViewById(R.id.image_foto);
+        Picasso.get().load(currentAtor.getFoto()).into(foto);
 
         TextView nome = listItem.findViewById(R.id.text_nome);
         nome.setText(currentAtor.getNome());

@@ -125,8 +125,8 @@ public class ListaFilmesActivity extends AppCompatActivity {
                     todosFilmes.add(filme);
                 }
                 ListView listView1 = findViewById(R.id.listView01);
-                FilmeAdapterListView filmeAdapter =
-                        new FilmeAdapterListView(ListaFilmesActivity.this, todosFilmes);
+                FilmeAdapterListViewCompleto filmeAdapter =
+                        new FilmeAdapterListViewCompleto(ListaFilmesActivity.this, todosFilmes);
                 listView1.setAdapter(filmeAdapter);
 
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_filme"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/text_descricao"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="Descricao:"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Título do Filme"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gênero"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_nota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nota: 0.0"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_atores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atores: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_diretor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diretor"
+        android:textSize="16sp" />
+
+</LinearLayout>
