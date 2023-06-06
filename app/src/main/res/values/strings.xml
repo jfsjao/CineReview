@@ -22,7 +22,7 @@
     <string name="recomendacoes">Recommendations</string>
     <string name="home">Home</string>
     <string name="minhas_celebridades">My celebs</string>
-    <string name="minha_lista">My List</string>
+    <string name="all_films">All Films</string>
 
     <!-- Strings ListView - myList  -->
     <string name="descricao">Descrição</string>

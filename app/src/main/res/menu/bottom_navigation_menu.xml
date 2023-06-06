@@ -17,6 +17,6 @@
         android:icon="@drawable/my_celebrity" />
     <item
         android:id="@+id/menu_item5"
-        android:title="@string/minha_lista"
+        android:title="@string/all_films"
         android:icon="@drawable/my_list" />
 </menu>

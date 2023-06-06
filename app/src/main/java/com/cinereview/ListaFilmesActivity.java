@@ -107,7 +107,7 @@ public class ListaFilmesActivity extends AppCompatActivity {
       //  DatabaseReference filmesRef = database.getReference().child("filmes");
        //filmesRef.child(filme1.getId()).setValue(filmeJson);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-         DatabaseReference filmesRef = database.getReference().child("filmes");
+        DatabaseReference filmesRef = database.getReference().child("filmes");
 
 
 
