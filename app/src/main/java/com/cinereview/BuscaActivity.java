@@ -4,15 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,6 +36,7 @@ public class BuscaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busca);
+
 
         // Remove o título
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
@@ -79,7 +90,9 @@ public class BuscaActivity extends AppCompatActivity {
         btn_busca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 enviarBusca();
+                enviarBuscaFirebase();
             }
         });
     }
@@ -97,4 +110,49 @@ public class BuscaActivity extends AppCompatActivity {
 
         // Lógica para lidar com a ação de enviar a busca aqui
     }
+
+
+    private void enviarBuscaFirebase() {
+        String searchQuery = autoCompleteTextView_busca.getText().toString().trim();
+        if (!searchQuery.isEmpty()) {
+            dbHelper.insertSearchQuery(searchQuery);
+
+            DatabaseReference filmesRef = FirebaseDatabase.getInstance().getReference().child("filmes");
+
+            filmesRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    ArrayList <Filme> filmesEncontrados = new ArrayList<>();
+                    for (DataSnapshot filmeSnapshot : dataSnapshot.getChildren()) {
+                        String filmeKey = filmeSnapshot.getKey();
+                        String filmeJson = filmeSnapshot.getValue(String.class);
+
+                        if (filmeJson.contains("\"nome\":\"" + searchQuery + "\"")) {
+                            Gson gson = new Gson();
+                            Filme filme = gson.fromJson(filmeJson, Filme.class);
+                            filmesEncontrados.add(filme);
+                        }
+                    }
+
+                    // Lógica para lidar com os filmes encontrados
+                    exibirFilmesEncontrados(filmesEncontrados);
+                    System.out.println(filmesEncontrados);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Tratar erro, se necessário
+                }
+            });
+        }
+    }
+
+    private void exibirFilmesEncontrados(ArrayList<Filme> filmesEncontrados) {
+        ListView listView1 = findViewById(R.id.listViewSearch);
+        FilmeAdapterListView filmeAdapter =
+                new FilmeAdapterListView(BuscaActivity.this, filmesEncontrados);
+        listView1.setAdapter(filmeAdapter);
+
+    }
+
 }

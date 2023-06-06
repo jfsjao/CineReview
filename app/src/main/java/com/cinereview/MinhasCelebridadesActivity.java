@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -24,8 +26,8 @@ import java.util.Objects;
 public class MinhasCelebridadesActivity extends AppCompatActivity {
 
 
-    private ArrayList<Ator> atoresList;
-    private ArrayList<Diretor> diretoresList;
+    private ArrayList<Ator> atoresList = new ArrayList<>();
+    private ArrayList<Diretor> diretoresList = new ArrayList<>();;
 
 
     @Override
@@ -73,9 +75,6 @@ public class MinhasCelebridadesActivity extends AppCompatActivity {
         });
 
 
-        atoresList = new ArrayList<>();
-        diretoresList = new ArrayList<>();
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference filmesRef = database.getReference().child("filmes");
 
@@ -96,18 +95,21 @@ public class MinhasCelebridadesActivity extends AppCompatActivity {
                     Diretor diretor = filme.getDiretor();
                     diretoresList.add(diretor);
                 }
-
-
+                LinearLayout horizontalLayout1 = findViewById(R.id.layoutAtores);
                 AtorAdapter atorAdapter = new AtorAdapter(MinhasCelebridadesActivity.this, atoresList);
+
+                for (int i = 0; i < atorAdapter.getCount(); i++) {
+                    View itemView = atorAdapter.getView(i, null, horizontalLayout1);
+                    horizontalLayout1.addView(itemView);
+                }
+
+                LinearLayout horizontalLayout2 = findViewById(R.id.layoutDiretor);
                 DiretorAdapter diretorAdapter = new DiretorAdapter(MinhasCelebridadesActivity.this, diretoresList);
 
-
-                ListView listViewAtores = findViewById(R.id.listViewAtores);
-                ListView listViewDiretores = findViewById(R.id.listViewDiretores);
-
-
-                listViewAtores.setAdapter(atorAdapter);
-                listViewDiretores.setAdapter(diretorAdapter);
+                for (int i = 0; i < diretorAdapter.getCount(); i++) {
+                    View itemView = diretorAdapter.getView(i, null, horizontalLayout2);
+                    horizontalLayout2.addView(itemView);
+                }
 
             }
 

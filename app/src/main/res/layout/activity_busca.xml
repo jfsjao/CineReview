@@ -53,6 +53,13 @@
                 android:layout_marginTop="16dp"
                 android:text="Buscar" />
 
+
+            <ListView
+                android:id="@+id/listViewSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
         </LinearLayout>
     </ScrollView>
 
