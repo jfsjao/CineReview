@@ -162,11 +162,9 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Tratar erro, se necessário
             }
         });
 
-        // Dentro do método setupFilmeItemClickListener(), após adicionar ou remover o filme dos favoritos
         userFavoritesRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -188,7 +186,6 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Tratar erro, se necessário
             }
         });
 
@@ -203,7 +200,6 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild(filmeId)) {
-                            // O filme já está nos favoritos, então exclua-o
                             userFavoritesRef.child(filmeId).removeValue();
                             Toast.makeText(HomeActivity.this, "Filme retirado dos favoritos",
                                     Toast.LENGTH_SHORT).show();
@@ -218,7 +214,6 @@ public class HomeActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-                        // Tratar erro, se necessário
                     }
                 });
             }
@@ -251,7 +246,6 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Tratar erro, se necessário
             }
         });
     }

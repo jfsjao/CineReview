@@ -108,7 +108,6 @@ public class BuscaActivity extends AppCompatActivity {
         adapter.addAll(searchHistory);
         adapter.notifyDataSetChanged();
 
-        // Lógica para lidar com a ação de enviar a busca aqui
     }
 
 
@@ -141,7 +140,6 @@ public class BuscaActivity extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-                    // Tratar erro, se necessário
                 }
             });
         }

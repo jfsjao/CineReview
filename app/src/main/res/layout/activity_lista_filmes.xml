@@ -26,7 +26,7 @@
             android:layout_marginBottom="0dp"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Minha Lista"
+            android:text="All Films"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />

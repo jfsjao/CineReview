@@ -78,34 +78,6 @@ public class ListaFilmesActivity extends AppCompatActivity {
         });
 
         ArrayList<Filme> todosFilmes = new ArrayList<>();
-
-//        Ator[] atores1 = {
-//                new Ator("Tom Hanks", 65, "Americano", "https://upload.wikimedia.org/wikipedia/commons/5/5c/Ridley_Scott_by_Gage_Skidmore.jpg"),
-//                new Ator("Emma Watson", 31, "Britânica", "https://upload.wikimedia.org/wikipedia/commons/5/5c/Ridley_Scott_by_Gage_Skidmore.jpg"),
-//                new Ator("Robert Downey Jr.", 56, "Americano", "https://upload.wikimedia.org/wikipedia/commons/5/5c/Ridley_Scott_by_Gage_Skidmore.jpg")
-//        };
-//
-//        Diretor diretor1 = new Diretor("Christopher Nolan", 51, "Britânico", "");
-//
-//        Filme filme1 = new Filme.Builder("Inception")
-//                .setId("001") // ID do filme
-//                .setGenero(new String[]{"Ação", "Ficção Científica"})
-//                .setAtores(atores1)
-//                .setDiretor(diretor1)
-//                .setNota(8.8f)
-//                .setDescricao("Dom Cobb é um habilidoso ladrão, o melhor na perigosa arte da extração: roubar segredos valiosos do inconsciente durante o sono das pessoas.")
-//                .setCartaz("https://upload.wikimedia.org/wikipedia/pt/e/e7/Martian_poster_2015.jpg")
-//                .setDataLancamento("16/07/2010")
-//                .build();
-//
-//        todosFilmes.add(filme1);
-//
-//        Gson gson = new GsonBuilder().create();
-//        String filmeJson = gson.toJson(filme1);
-
-       // FirebaseDatabase database = FirebaseDatabase.getInstance();
-      //  DatabaseReference filmesRef = database.getReference().child("filmes");
-       //filmesRef.child(filme1.getId()).setValue(filmeJson);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference filmesRef = database.getReference().child("filmes");
 
@@ -134,7 +106,6 @@ public class ListaFilmesActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Tratar erro, catch
             }
         });
 

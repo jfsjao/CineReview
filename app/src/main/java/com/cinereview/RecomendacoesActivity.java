@@ -142,14 +142,12 @@ public class RecomendacoesActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        // Tratar erro, se necessário
                     }
                 });
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Tratar erro, se necessário
             }
         });
     }
